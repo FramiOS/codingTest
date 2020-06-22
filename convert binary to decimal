@@ -1,0 +1,22 @@
+def convert_binary_to_decimal(binary_value):
+    power, result = 0, 0
+    while binary_value>0:
+        result += binary_value % 10 * (2**power)
+        binary_value = binary_value//10
+        power += 1
+    return result
+    
+    
+    
+result = convert_binary_to_decimal(1001)
+print(result)
+
+
+def convert_binary_to_decimal_2(binary_value):
+    result, base = 0, 2
+    for idx, i in enumerate(binary_value[::-1]):
+        result += int(i) % 10 * (base**idx)
+    return result
+    
+result2 = convert_binary_to_decimal_2("1001")
+print(result2)
