@@ -9,7 +9,9 @@ def solution(priority, location):
         
         if(first_priority != max_priority) :
             priority.append(first_priority)
-        answer += 1
+        else : 
+            answer += 1
+            
         location -= 1
         
         if(location == -1):
