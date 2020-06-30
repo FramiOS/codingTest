@@ -52,4 +52,29 @@ result = solution(priorities, location)
 print(result)
 if(result == answer):
     print("success")
-# answer if문 위치 
+-----------------------------------------------------------------------------------
+
+# final
+def solution(priorities, location):
+    answer = 0
+    while(len(priorities) != 0):
+        
+        max_priority = max(priorities)
+        first_priority = priorities.pop(0)
+        
+        if first_priority == max_priority:
+            answer += 1
+            if location == 0:
+                return answer
+        else :
+            priorities.append(first_priority)
+            
+        location -= 1
+        
+        if(location == -1):
+            location = len(priorities) - 1
+result = solution(priorities, location)
+if(result == print_result):
+    print("sucess")
+else : 
+    print(result)
