@@ -52,3 +52,4 @@ result = solution(priorities, location)
 print(result)
 if(result == answer):
     print("success")
+# answer if문 위치 
