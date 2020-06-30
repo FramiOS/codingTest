@@ -1,0 +1,19 @@
+# proceeding
+
+def solution(priority, location):
+    answer = 0
+    while(1):
+        max_priority = max(priority)
+        
+        first_priority = priority.pop(0)
+        
+        if(first_priority != max_priority) :
+            priority.append(first_priority)
+        answer += 1
+        location -= 1
+        
+        if(location == -1):
+            location = len(location) - 1
+        
+        if (location == 0) & (priority[location] == max_priority):
+            return answer
