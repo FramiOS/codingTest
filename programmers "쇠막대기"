@@ -1,0 +1,26 @@
+arrangement = "()(((()())(())()))(())"
+answer = 17
+
+def solution(arrangement):
+    stick_list = list(arrangement)
+    
+    answer = 0
+    stick = 0
+    
+    for i in range(len(stick_list)):
+        current_value = stick_list[i]
+        
+        if current_value == "(":
+            stick += 1
+        elif current_value == ")":
+            stick -= 1
+            if stick_list[i-1] == "(":
+                answer += stick
+            elif stick_list[i-1] == ")":
+                answer += 1
+
+    return answer
+
+print(solution(arrangement))
+
+# reference : https://programmers.co.kr/learn/courses/30/lessons/42585
