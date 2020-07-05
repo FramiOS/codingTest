@@ -1,0 +1,23 @@
+heights = [1,5,3,6,7,6,5]
+programmers_answer = [0,0,2,0,0,5,6]
+
+def solution(heights):
+    answer = []
+    while len(heights) != 0:
+        index = -1
+        current_value = heights.pop()
+        
+        for i, e in reversed(list(enumerate(heights))):
+            if e > current_value:
+                index = i + 1
+                answer.insert(0, index)
+                break
+        if index == -1:
+            answer.insert(0, 0)
+        print(answer)
+    return answer
+
+return_value = solution(heights)
+print(return_value)
+
+# reference link : https://programmers.co.kr/learn/courses/30/lessons/42588
