@@ -1,0 +1,21 @@
+def solution(bridge_length, weight, truck_weights):
+    bridge_list = [0] * bridge_length
+    answer = 0
+    weight_amount = 0
+    
+    while True:
+        weight_amount -= bridge_list.pop(0)
+        
+        if truck_weights[0] + weight_amount <= weight :
+            current_value = truck_weights.pop(0)
+            weight_amount += current_value
+            bridge_list.append(current_value)
+        else : 
+            bridge_list.append(0)
+            
+        answer += 1
+        
+        if len(truck_weights) == 0:
+            answer += bridge_length
+            return answer
+# reference : https://programmers.co.kr/learn/courses/30/lessons/42583
